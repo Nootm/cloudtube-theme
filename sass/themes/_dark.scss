@@ -1,0 +1,151 @@
+// Defined in scss file instead of sass because indented syntax does not have multiline maps
+// https://github.com/sass/sass/issues/216
+
+@use "sass:map";
+
+// This section is for colour shades
+$theme: (
+  // darker
+  "bg-0": #252628,
+  "bg-1": #303336,
+  // regular
+  "bg-2": #36393f,
+  // lighter
+  "bg-3": #3f4247, // slightly
+  "bg-4": #44474b, // noticably
+  "bg-5": #4f5359, // brightly
+
+  "fg-bright": #fff,
+  "fg-main": #ddd,
+  "fg-dim": #bbb,
+  "fg-warning": #fdca6d,
+
+  "edge-grey": #a0a0a0,
+  "placeholder": #c4c4c4,
+
+  "link": #8ac2f9,
+
+  "power-deep": #c62727,
+  "power-fg": "#fff",
+
+  "image-dropdown": url(/static/images/arrow-down-wide-dark.svg)
+);
+
+// This section is for colour meanings
+$theme: map.merge($theme, (
+  "bg-dim": map.get($theme, "bg-0"),
+  "bg-nav": map.get($theme, "bg-5"),
+));
+
+
+body,
+aside {
+	background-color: #1B1B1B !important;
+	color: #FFF !important;
+	font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif !important;
+}
+.info {
+	margin-left: 4px;
+}
+.title-link {
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	&:hover {
+		color: #AAA !important;
+	}
+}
+.subscriptions-video {
+	.title-link {
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 1;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+	.description {
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+	& > .thumbnail {
+		margin-top: 2px;
+	}
+}
+.related-video {
+	.title {
+		line-height: 1.3 !important;
+	}
+	.duration {
+		border-radius: 6px !important;
+	}
+	& > .thumbnail {
+		margin-top: 1px;
+	}
+	.author-line {
+		margin-top: 7px !important;
+	}
+}
+.main-nav {
+	background-color: #343434 !important;
+	color: #FFF !important;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.channels-details {
+	background-color: #343434 !important;
+	color: #FFF !important;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.image,
+.video {
+	border-radius: 6px !important;
+	border: none !important;
+	background: black !important;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, .3);
+}
+:focus {
+	outline: none !important;
+}
+.related-video,
+.thumbnail,
+.thumbnail_link {
+	background: transparent !important;
+}
+.border-look {
+	background-color: #343434 !important;
+	color: #FFF !important;
+	border: none !important;
+	padding: 8px 12px !important;
+}
+#subscribe {
+	background-color: #ff6060 !important;
+	color: #FFF !important;
+}
+#description {
+	background-color: transparent !important;
+	color: #FFF !important;
+	font-size: medium !important;
+	padding: 6px 2px !important;
+}
+.thumbnail__show-more {
+	line-height: 20px !important;
+	font-size: 20px !important;
+}
+.continuous-start {
+	margin-right: 10px !important;
+}
+#quality-select {
+	padding-right: 25px !important;
+}
+.image {
+	&:hover {
+		opacity: 0.7 !important;
+		background-color: black !important;
+	}
+}
